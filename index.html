@@ -1,0 +1,33 @@
+<html ng-app="goalsApp">
+<head>
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+  <script src="application.js"></script>
+</head>
+<body ng-controller="GoalsListController">
+  <p>goal array:</p>
+  {{goals}}
+
+  <ul>
+    <li ng-repeat="goal in goals">
+      {{goal.title}}
+    </li>
+  </ul>
+
+  <button ng-click="makeNewGoal()">Make New Goal</button>
+  <br>
+  <form ng-show="newGoal">
+    {{newGoal}}
+    <br>
+    Title:
+    <input ng-model="newGoal.title">
+    Urgency:
+    <input ng-model="newGoal.urgency">
+    <button ng-click="saveNewGoal()">Save Goal</button>
+    <button ng-click="deleteNewGoal()">Fuck this Goal</button>
+  </form>
+
+  <mrWorldWide>pile of shit</mrWorldWide>
+
+</body>
+</html>
