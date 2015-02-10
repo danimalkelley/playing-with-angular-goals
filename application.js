@@ -1,6 +1,6 @@
 var goalsApp = angular.module("goalsApp", []);
 
-var GoalsController = goalsApp.controller("GoalsListController", function($scope){
+var GoalsController = goalsApp.controller("GoalsListController", ['$scope', function($scope){
   $scope.goalModel = {title: "", urgency: ""}
   $scope.makeNewGoal = function(){
     $scope.newGoal = angular.copy($scope.goalModel)
@@ -17,12 +17,13 @@ var GoalsController = goalsApp.controller("GoalsListController", function($scope
   }
 
   $scope.goals = [{title: "sdfasdf"},{title: "sdfasdf"},{title: "sdfasdf"}];
-})
+}])
 
-GoalsController.directive('mistah305', function(){
+.directive('mistah', function(){
   return {
-    transclude: true, // Behave as a "frame" around provided content
+    transclude: true,
     replace: true,
-    templateUrl:"mistahworldwide.html"
-  }
-})
+    restrict: 'E',
+    templateUrl: "unicorn-cat.html"
+  };
+});
